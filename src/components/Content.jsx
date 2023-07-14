@@ -20,7 +20,7 @@ export default function Content() {
       id: 2,
       name: "School Scheduling",
       icon: <FaJava size={40} />,
-      desc: "CRUD for school scheduling for Java training middle exam",
+      desc: "CRUD for school scheduling of Java training middle exam",
       source:
         "https://github.com/fadlifathurrahman/uts_pelatihan_java_lanjutan.git",
     },
