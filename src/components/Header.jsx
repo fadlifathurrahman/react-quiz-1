@@ -1,10 +1,23 @@
-import { BsCodeSlash } from "react-icons/bs";
+import { DiCode } from "react-icons/di";
+import ThemeButton from "./ThemeButton";
 
 export default function Header() {
   return (
-    <header className="max-w-screen h-16 bg-slate-800 text-white flex flex-row items-center gap-4 pl-4 top-0 sticky">
-      <BsCodeSlash size="30px" className="bg-cyan-700 p-1 rounded-full" />
-      <div className="text-3xl ">Fadli.ft</div>
+    <header
+      className="max-w-screen h-16 bg-slate-800 text-white 
+    flex flex-row items-center justify-between
+    px-8 top-0 sticky"
+    >
+      <div
+        className="text-sm font-mono flex flex-row items-center content-center
+      sm:text-md
+      md:text-lg
+      lg:text-2xl"
+      >
+        f<DiCode size="28" className="lg:text-2xl" />
+        dli.ft
+      </div>
+      <ThemeButton />
     </header>
   );
 }
