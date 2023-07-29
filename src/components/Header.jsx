@@ -1,5 +1,6 @@
 import { DiCode } from "react-icons/di";
 import ThemeButton from "./ThemeButton";
+import LanguageButton from "./LanguageButton";
 
 export default function Header() {
   return (
@@ -18,6 +19,7 @@ export default function Header() {
         dli.ft
       </div>
       <ThemeButton />
+      <LanguageButton />
     </header>
   );
 }

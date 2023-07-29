@@ -9,14 +9,22 @@ export const ThemeContext = createContext({
   setTheme: () => {},
 });
 
+export const LangContext = createContext({
+  lang: null,
+  setLang: () => {},
+});
+
 export default function App() {
   const [theme, setTheme] = useState("light");
+  const [lang, setLang] = useState("id");
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Header theme={theme} />
-      <Outlet />
-      <Footer />
-    </ThemeContext.Provider>
+    <LangContext.Provider value={{ lang, setLang }}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Header theme={theme} lang={lang} />
+        <Outlet />
+        <Footer />
+      </ThemeContext.Provider>
+    </LangContext.Provider>
   );
 }

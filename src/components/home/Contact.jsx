@@ -2,9 +2,10 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ThemeContext } from "../../App";
+import { LangContext, ThemeContext } from "../../App";
 
 export default function Contact() {
+  const { lang } = useContext(LangContext);
   const { theme } = useContext(ThemeContext);
   const connection = [
     {
@@ -23,6 +24,14 @@ export default function Contact() {
       link: "https://www.instagram.com/fadli.ft/",
     },
   ];
+  const stringsHead = {
+    id: {
+      text: "Mari Terhubung",
+    },
+    en: {
+      text: "Lets get connected",
+    },
+  };
 
   return (
     <div
@@ -47,7 +56,7 @@ export default function Contact() {
           md:text-1xl
           sm:text-1xl"
         >
-          <p>Lets get connected</p>
+          <p className="lg:text-3xl">{stringsHead[lang].text}</p>
           <div className="flex flex-row pt-4 justify-evenly">
             {connection.map((acc) => (
               <Link

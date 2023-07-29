@@ -1,9 +1,23 @@
 import { useContext } from "react";
 import BackgroundS2 from "/batik-fill-2.png";
-import { ThemeContext } from "../../App";
+import { LangContext, ThemeContext } from "../../App";
 
 export default function Landing() {
   const { theme } = useContext(ThemeContext);
+  const { lang } = useContext(LangContext);
+
+  const stringsLanding = {
+    id: {
+      p1: "Selamat datang",
+      p2: "Saya",
+      p3: "Programmer handal",
+    },
+    en: {
+      p1: "Hello there!",
+      p2: "I'm",
+      p3: "Senior fullstack progammer",
+    },
+  };
   return (
     <div
       className={
@@ -56,9 +70,9 @@ export default function Landing() {
         lg:text-2xl"
         >
           <div className={theme === "dark" ? "text-white " : "bg-white "}>
-            <p>Hello there!</p>
+            <p>{stringsLanding[lang].p1}</p>
             <p className="flex gap-2">
-              I&apos;m
+              {stringsLanding[lang].p2}
               <span
                 className={
                   theme === "dark"
@@ -69,7 +83,7 @@ export default function Landing() {
                 Muhammad Fadli Fathurrahman
               </span>
             </p>
-            <p>a web developer enthusiast</p>
+            <p>{stringsLanding[lang].p3}</p>
           </div>
         </article>
       </section>

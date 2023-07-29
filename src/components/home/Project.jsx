@@ -3,10 +3,12 @@ import { FaJava, FaHtml5 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Contact from "./Contact";
 import { useContext } from "react";
-import { ThemeContext } from "../../App";
+import { LangContext, ThemeContext } from "../../App";
 
 export default function Project() {
   const { theme } = useContext(ThemeContext);
+  const { lang } = useContext(LangContext);
+
   const myProject = [
     {
       id: 1,
@@ -46,10 +48,20 @@ export default function Project() {
     },
   ];
 
+  const stringsHead = {
+    id: {
+      text: "Proyek Saat Ini",
+    },
+    en: {
+      text: "Current Project",
+    },
+  };
+
   return (
     <section
-      className="flex max-w-screen items-center justify-center flex-wrap m-6 gap-6
-    lg:flex-row"
+      className="flex max-w-screen items-start justify-center flex-wrap m-6 gap-6
+    lg:flex-row
+    lg:justify-between"
     >
       <div
         className="w-4/6
@@ -66,11 +78,11 @@ export default function Project() {
           <div className="-mt-12 mb-2 z-10">
             <p
               className="text-white text-lg bg-cyan-950 bg-opacity-70 p-4 font-bold
-            max-lg:text-3xl
+            lg:text-3xl
             max-md:text-2xl
             max-sm:text-1xl"
             >
-              Current Project
+              {stringsHead[lang].text}
             </p>
           </div>
         </div>
